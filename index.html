@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NeuroNest — Brain Health for Every Stage of Life</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,900;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="brand-icon">🧠</span>
+      <span class="brand-name">NeuroNest</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="pages/learn.html">Learn</a></li>
+      <li><a href="pages/games.html">Brain Games</a></li>
+      <li><a href="pages/journal.html">My Journal</a></li>
+      <li><a href="pages/caregiver.html">Caregivers</a></li>
+      <li><a href="pages/chat.html">Ask NeuroNest</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-orb orb1"></div>
+    <div class="hero-bg-orb orb2"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Your brain health companion</p>
+      <h1 class="hero-title">A sharper mind<br><em>starts here.</em></h1>
+      <p class="hero-sub">NeuroNest is a warm, science-backed space where older adults learn about neurological health, play games that keep the mind active, and track their wellbeing — day by day.</p>
+      <div class="hero-cta-row">
+        <a href="pages/learn.html" class="btn-primary">Start Learning</a>
+        <a href="pages/games.html" class="btn-secondary">Play Brain Games</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="brain-ring ring1"></div>
+      <div class="brain-ring ring2"></div>
+      <div class="brain-ring ring3"></div>
+      <div class="brain-center">🧠</div>
+    </div>
+  </section>
+
+  <!-- DAILY BRAIN BOOST -->
+  <section class="daily-boost">
+    <div class="boost-card">
+      <div class="boost-label">✨ Today's Brain Boost</div>
+      <p class="boost-text" id="dailyBoost">Loading today's tip...</p>
+      <span class="boost-date" id="boostDate"></span>
+    </div>
+  </section>
+
+  <!-- FEATURES GRID -->
+  <section class="features">
+    <div class="section-header">
+      <h2>Everything you need, in one place</h2>
+      <p>Built specifically for older adults and their families.</p>
+    </div>
+    <div class="features-grid">
+      <a href="pages/learn.html" class="feature-card card-learn">
+        <div class="card-icon">📚</div>
+        <h3>Learn</h3>
+        <p>Friendly, plain-English lessons on Alzheimer's, Parkinson's, dementia, stroke, and more.</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a href="pages/games.html" class="feature-card card-games">
+        <div class="card-icon">🎮</div>
+        <h3>Brain Games</h3>
+        <p>Memory, pattern, and word games — all designed around real cognitive science.</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a href="pages/journal.html" class="feature-card card-journal">
+        <div class="card-icon">📓</div>
+        <h3>My Journal</h3>
+        <p>Check in daily on mood and cognition. Watch your streaks grow and see your patterns.</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a href="pages/caregiver.html" class="feature-card card-caregiver">
+        <div class="card-icon">🤝</div>
+        <h3>Caregiver Corner</h3>
+        <p>Resources, warning signs, and communication guides for families and caregivers.</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a href="pages/chat.html" class="feature-card card-chat">
+        <div class="card-icon">💬</div>
+        <h3>Ask NeuroNest</h3>
+        <p>Have a question? Our AI assistant answers your neurological health questions 24/7.</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a href="pages/journal.html#dashboard" class="feature-card card-dashboard">
+        <div class="card-icon">📊</div>
+        <h3>Progress Dashboard</h3>
+        <p>Track your game scores and journal streaks with beautiful visual charts.</p>
+        <span class="card-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip">
+    <div class="stat-item">
+      <span class="stat-num">5</span>
+      <span class="stat-label">Neurological conditions covered</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">8+</span>
+      <span class="stat-label">Brain games to play</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">365</span>
+      <span class="stat-label">Daily brain boosts per year</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">∞</span>
+      <span class="stat-label">Questions you can ask NeuroNest</span>
+    </div>
+  </section>
+
+  <!-- CONDITIONS PREVIEW -->
+  <section class="conditions">
+    <div class="section-header">
+      <h2>Conditions we cover</h2>
+      <p>Compassionate, science-backed education — no medical jargon.</p>
+    </div>
+    <div class="conditions-row">
+      <a href="pages/learn.html#alzheimers" class="condition-pill">🧩 Alzheimer's Disease</a>
+      <a href="pages/learn.html#parkinsons" class="condition-pill">🤲 Parkinson's Disease</a>
+      <a href="pages/learn.html#dementia" class="condition-pill">🌫️ Dementia</a>
+      <a href="pages/learn.html#stroke" class="condition-pill">⚡ Stroke</a>
+      <a href="pages/learn.html#mci" class="condition-pill">🔍 Mild Cognitive Impairment</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span>🧠</span> NeuroNest
+        <p>A passion project dedicated to brain health education.</p>
+      </div>
+      <div class="footer-links">
+        <a href="pages/learn.html">Learn</a>
+        <a href="pages/games.html">Brain Games</a>
+        <a href="pages/journal.html">Journal</a>
+        <a href="pages/caregiver.html">Caregivers</a>
+        <a href="pages/chat.html">Ask NeuroNest</a>
+      </div>
+    </div>
+    <p class="footer-disclaimer">NeuroNest is for educational purposes only. Always consult a medical professional for health advice.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

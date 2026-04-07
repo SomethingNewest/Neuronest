@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Caregiver Corner — NeuroNest</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,900;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand"><span class="brand-icon">🧠</span><span class="brand-name">NeuroNest</span></div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="games.html">Brain Games</a></li>
+      <li><a href="journal.html">My Journal</a></li>
+      <li><a href="caregiver.html" class="active">Caregivers</a></li>
+      <li><a href="chat.html">Ask NeuroNest</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+  </nav>
+
+  <div class="page-hero">
+    <h1>🤝 Caregiver Corner</h1>
+    <p>For the families, partners, and friends who show up every day. You're not alone — and you matter too.</p>
+  </div>
+
+  <div class="caregiver-section">
+
+    <div style="background: #F0F7F3; border-radius: var(--radius); padding: 36px; margin-bottom: 40px; border-left: 5px solid var(--sage);">
+      <h3 style="color:var(--forest);font-size:1.5rem;margin-bottom:12px;">A note to caregivers</h3>
+      <p style="color:var(--text-mid);line-height:1.75;font-size:1.05rem;">Caring for someone with a neurological condition is one of the most demanding — and meaningful — roles a person can fill. This section is dedicated to you. Here you'll find guidance on understanding symptoms, communicating effectively, recognizing when to get more help, and taking care of yourself, too.</p>
+    </div>
+
+    <div class="info-blocks">
+
+      <div class="info-block">
+        <h3>🗣️ Communication Tips</h3>
+        <ul>
+          <li>Speak slowly, clearly, and in short sentences</li>
+          <li>Use their name at the beginning of sentences to get attention</li>
+          <li>Ask one question at a time — avoid giving multiple choices</li>
+          <li>Don't correct or argue — redirect instead</li>
+          <li>Use gestures, pictures, or written notes when words aren't enough</li>
+          <li>Approach from the front, make eye contact, and smile</li>
+          <li>Give extra time to respond — don't rush or finish sentences for them</li>
+        </ul>
+      </div>
+
+      <div class="info-block red-flag">
+        <h3>⚠️ Red Flags — When to See a Doctor Immediately</h3>
+        <ul>
+          <li>Sudden, dramatic change in personality or behavior</li>
+          <li>New difficulty walking or increased falls</li>
+          <li>Sudden confusion or inability to recognize familiar people</li>
+          <li>Signs of a stroke (BE-FAST: Balance, Eyes, Face, Arms, Speech, Time)</li>
+          <li>Expressions of wanting to harm themselves</li>
+          <li>Sudden inability to swallow or speak</li>
+          <li>High fever combined with confusion (could indicate infection)</li>
+        </ul>
+      </div>
+
+      <div class="info-block">
+        <h3>🏡 Creating a Safe Home</h3>
+        <ul>
+          <li>Remove loose rugs and clutter from walkways to prevent falls</li>
+          <li>Install grab bars in bathrooms near the toilet and shower</li>
+          <li>Use nightlights throughout the home for nighttime navigation</li>
+          <li>Lock away medications, cleaning chemicals, and sharp objects</li>
+          <li>Put labels on important doors and drawers (e.g., "BATHROOM")</li>
+          <li>Consider door alarms if wandering is a concern</li>
+          <li>Simplify the environment — reduce visual clutter and distractions</li>
+        </ul>
+      </div>
+
+      <div class="info-block">
+        <h3>🧘 Caregiver Self-Care</h3>
+        <ul>
+          <li>Caregiver burnout is real — watch for signs like exhaustion, resentment, or depression</li>
+          <li>Accept help from others — you cannot do this alone</li>
+          <li>Join a caregiver support group (in-person or online)</li>
+          <li>Use respite care services for temporary relief</li>
+          <li>Maintain your own medical appointments and health checkups</li>
+          <li>Set boundaries — caring for yourself is not selfish, it's necessary</li>
+          <li>Give yourself permission to grieve — caring for someone with dementia involves ongoing loss</li>
+        </ul>
+      </div>
+
+      <div class="info-block">
+        <h3>💊 Medication Management</h3>
+        <ul>
+          <li>Use a pill organizer or blister packs to prevent double-dosing</li>
+          <li>Keep a written medication list with dosages and times</li>
+          <li>Bring the full medication list to every doctor's appointment</li>
+          <li>Watch for side effects — many common medications affect cognition in older adults</li>
+          <li>Ask the pharmacist to review for drug interactions regularly</li>
+          <li>Some medications for anxiety or sleep can worsen cognitive symptoms — ask the doctor</li>
+        </ul>
+      </div>
+
+      <div class="info-block">
+        <h3>📋 Legal & Financial Planning</h3>
+        <ul>
+          <li>Set up a durable power of attorney while your loved one can still participate in the decision</li>
+          <li>Establish healthcare proxy / medical power of attorney documents</li>
+          <li>Create or update an advance directive / living will</li>
+          <li>Review beneficiary designations on financial accounts and insurance</li>
+          <li>Consult an elder law attorney — many specialize in dementia planning</li>
+          <li>Understand Medicaid and Medicare coverage for memory care and long-term care</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- STAGES GUIDE -->
+    <div style="margin-top: 50px; background: white; border-radius: var(--radius); padding: 40px; border: 1px solid var(--border);">
+      <h3 style="font-size:1.8rem;color:var(--forest);margin-bottom:24px;">What to Expect at Each Stage</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <div style="padding:24px;background:var(--cream);border-radius:var(--radius-sm);">
+          <strong style="color:var(--sage);display:block;margin-bottom:12px;">🌱 Early Stage</strong>
+          <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.65;">Your loved one is likely still largely independent. Focus on legal planning, safety modifications, establishing routines, and encouraging continued hobbies and social activities.</p>
+        </div>
+        <div style="padding:24px;background:var(--cream);border-radius:var(--radius-sm);">
+          <strong style="color:var(--gold);display:block;margin-bottom:12px;">🌤️ Middle Stage</strong>
+          <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.65;">Increased supervision is needed. Help with daily tasks like dressing and meals. Wandering and behavioral changes may emerge. This is often when in-home care or adult day programs become helpful.</p>
+        </div>
+        <div style="padding:24px;background:var(--cream);border-radius:var(--radius-sm);">
+          <strong style="color:var(--rose);display:block;margin-bottom:12px;">🌙 Late Stage</strong>
+          <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.65;">Full-time care is required. Focus shifts to comfort, dignity, and quality of life. Hospice services may become appropriate. Grief support for the whole family is important at this stage.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESOURCES -->
+    <div style="margin-top: 40px; background: var(--forest); color: white; border-radius: var(--radius); padding: 40px;">
+      <h3 style="font-size:1.6rem;margin-bottom:24px;">📞 Trusted Resources</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+        <div>
+          <strong style="color:var(--gold-light);display:block;margin-bottom:6px;">Alzheimer's Association</strong>
+          <p style="font-size:0.9rem;opacity:0.8;">24/7 Helpline: 1-800-272-3900 | alz.org</p>
+        </div>
+        <div>
+          <strong style="color:var(--gold-light);display:block;margin-bottom:6px;">Parkinson's Foundation</strong>
+          <p style="font-size:0.9rem;opacity:0.8;">Helpline: 1-800-4PD-INFO | parkinson.org</p>
+        </div>
+        <div>
+          <strong style="color:var(--gold-light);display:block;margin-bottom:6px;">Caregiver Action Network</strong>
+          <p style="font-size:0.9rem;opacity:0.8;">Support and resources for family caregivers | caregiveraction.org</p>
+        </div>
+        <div>
+          <strong style="color:var(--gold-light);display:block;margin-bottom:6px;">AARP Caregiver Resources</strong>
+          <p style="font-size:0.9rem;opacity:0.8;">Comprehensive tools and community | aarp.org/caregiving</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><span>🧠</span> NeuroNest <p>A passion project dedicated to brain health education.</p></div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="games.html">Brain Games</a>
+        <a href="journal.html">Journal</a>
+        <a href="chat.html">Ask NeuroNest</a>
+      </div>
+    </div>
+    <p class="footer-disclaimer">NeuroNest is for educational purposes only. Always consult a medical professional for health advice.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

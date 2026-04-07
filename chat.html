@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ask NeuroNest — AI Chat</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,900;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand"><span class="brand-icon">🧠</span><span class="brand-name">NeuroNest</span></div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="games.html">Brain Games</a></li>
+      <li><a href="journal.html">My Journal</a></li>
+      <li><a href="caregiver.html">Caregivers</a></li>
+      <li><a href="chat.html" class="active">Ask NeuroNest</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+  </nav>
+
+  <div class="page-hero">
+    <h1>💬 Ask NeuroNest</h1>
+    <p>Your compassionate AI companion for brain health questions. Ask anything about neurological conditions, symptoms, prevention, or caregiving.</p>
+  </div>
+
+  <div class="chat-section">
+
+    <!-- SIDEBAR -->
+    <div class="chat-sidebar">
+      <h3>💡 Try asking...</h3>
+      <div class="suggested-q">What are the early signs of Alzheimer's disease?</div>
+      <div class="suggested-q">How is Parkinson's different from normal aging?</div>
+      <div class="suggested-q">What foods are best for brain health?</div>
+      <div class="suggested-q">How can I help a parent with dementia?</div>
+      <div class="suggested-q">What does a TIA feel like?</div>
+      <div class="suggested-q">What is mild cognitive impairment?</div>
+      <div class="suggested-q">How much sleep does the brain need?</div>
+      <div class="suggested-q">Can dementia be prevented?</div>
+      <div class="suggested-q">What is neuroplasticity?</div>
+
+      <div style="margin-top: 28px; padding: 16px; background: #FFF8F0; border-radius: var(--radius-sm); border: 1px solid rgba(200,145,58,0.2);">
+        <p style="font-size:0.82rem;color:var(--text-mid);line-height:1.65;">⚠️ <strong>Important:</strong> NeuroNest provides educational information only. Always consult a physician for personal medical decisions or concerns.</p>
+      </div>
+    </div>
+
+    <!-- CHAT -->
+    <div class="chat-main">
+      <div class="chat-messages" id="chatMessages">
+        <!-- Welcome message -->
+        <div class="chat-bubble bubble-bot">
+          <strong>Hello! I'm NeuroNest 🧠</strong><br><br>
+          I'm here to help you understand brain health, neurological conditions, and how to support yourself or a loved one. Ask me anything — there are no silly questions when it comes to your brain.<br><br>
+          <em>What would you like to know today?</em>
+        </div>
+      </div>
+
+      <div class="typing-indicator" id="typingIndicator">
+        <div class="typing-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="chat-input-row">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Ask a brain health question..." />
+        <button class="chat-send" id="chatSend" onclick="sendChat()">Send →</button>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><span>🧠</span> NeuroNest <p>A passion project dedicated to brain health education.</p></div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="games.html">Brain Games</a>
+        <a href="journal.html">Journal</a>
+        <a href="caregiver.html">Caregivers</a>
+      </div>
+    </div>
+    <p class="footer-disclaimer">NeuroNest is for educational purposes only. Always consult a medical professional for health advice.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

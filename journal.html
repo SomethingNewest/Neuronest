@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Journal — NeuroNest</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,900;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand"><span class="brand-icon">🧠</span><span class="brand-name">NeuroNest</span></div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="games.html">Brain Games</a></li>
+      <li><a href="journal.html" class="active">My Journal</a></li>
+      <li><a href="caregiver.html">Caregivers</a></li>
+      <li><a href="chat.html">Ask NeuroNest</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+  </nav>
+
+  <div class="page-hero">
+    <h1>📓 My Brain Journal</h1>
+    <p>Check in daily on how you're feeling and how sharp your mind is. Small daily records reveal powerful patterns over time.</p>
+  </div>
+
+  <!-- STREAK -->
+  <div style="padding: 30px 80px 0;">
+    <div class="streak-banner">
+      <div class="streak-fire">🔥</div>
+      <div class="streak-text">
+        <strong><span id="streakCount">0</span>-day streak!</strong>
+        <p>Keep checking in every day to grow your streak and build a habit.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JOURNAL FORM + HISTORY -->
+  <div class="journal-section">
+
+    <!-- FORM -->
+    <div class="journal-form-area">
+      <h2>Today's Check-In</h2>
+      <p class="journal-subtitle" id="todayDate"></p>
+
+      <div class="form-group">
+        <label>😊 Mood (1 = low, 10 = excellent)</label>
+        <input type="range" id="moodSlider" min="1" max="10" value="5" oninput="updateMoodLabel(this.value)" />
+        <div class="mood-slider-labels">
+          <span>😔 Very low</span>
+          <span id="moodLabel" style="font-weight:600;color:var(--forest);">5</span>
+          <span>😄 Excellent</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>🧠 Mental Sharpness (1 = foggy, 10 = razor-sharp)</label>
+        <input type="range" id="sharpnessSlider" min="1" max="10" value="5" oninput="updateSharpLabel(this.value)" />
+        <div class="mood-slider-labels">
+          <span>🌫️ Very foggy</span>
+          <span id="sharpLabel" style="font-weight:600;color:var(--forest);">5</span>
+          <span>⚡ Razor sharp</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>✍️ How are you feeling today? (Notes)</label>
+        <textarea id="journalNotes" rows="5" placeholder="Describe your day, how you slept, any memory moments, activities you did..."></textarea>
+      </div>
+
+      <button class="btn-submit" onclick="saveJournalEntry()">Save Today's Entry 💾</button>
+    </div>
+
+    <!-- HISTORY -->
+    <div class="journal-history">
+      <h2>Past Entries</h2>
+      <div id="journalEntries">
+        <p style="color:var(--text-light);font-size:0.9rem;">No entries yet. Start journaling today!</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WHY JOURNAL -->
+  <section style="padding: 60px 80px; background: white;">
+    <div class="section-header">
+      <h2>Why Keep a Brain Journal?</h2>
+      <p>Research shows that self-monitoring cognitive function can lead to earlier detection of changes.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div class="learn-card">
+        <h4>🔍 Spot Patterns Early</h4>
+        <p>Daily tracking over months reveals trends invisible day-to-day. You might notice your sharpness is always lower after poor sleep or certain foods.</p>
+      </div>
+      <div class="learn-card">
+        <h4>📋 Better Doctor Visits</h4>
+        <p>Bring your journal data to appointments. Real data helps physicians understand your baseline and identify changes much more accurately than memory alone.</p>
+      </div>
+      <div class="learn-card">
+        <h4>💪 Build Awareness</h4>
+        <p>The act of reflecting on your cognitive state each day builds metacognitive awareness — a skill strongly associated with better memory performance in older adults.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><span>🧠</span> NeuroNest <p>A passion project dedicated to brain health education.</p></div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="games.html">Brain Games</a>
+        <a href="caregiver.html">Caregivers</a>
+        <a href="chat.html">Ask NeuroNest</a>
+      </div>
+    </div>
+    <p class="footer-disclaimer">NeuroNest is for educational purposes only. Always consult a medical professional for health advice.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    function updateMoodLabel(v) { document.getElementById('moodLabel').textContent = v; }
+    function updateSharpLabel(v) { document.getElementById('sharpLabel').textContent = v; }
+    document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  </script>
+</body>
+</html>

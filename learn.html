@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learn — NeuroNest</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,900;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand"><span class="brand-icon">🧠</span><span class="brand-name">NeuroNest</span></div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="learn.html" class="active">Learn</a></li>
+      <li><a href="games.html">Brain Games</a></li>
+      <li><a href="journal.html">My Journal</a></li>
+      <li><a href="caregiver.html">Caregivers</a></li>
+      <li><a href="chat.html">Ask NeuroNest</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+  </nav>
+
+  <div class="page-hero">
+    <h1>📚 Learn About Brain Health</h1>
+    <p>Clear, compassionate education on the neurological conditions that matter most — written for real people, not doctors.</p>
+  </div>
+
+  <!-- CONDITION TABS -->
+  <div class="conditions-nav">
+    <button class="cond-tab active" data-target="alzheimers">🧩 Alzheimer's</button>
+    <button class="cond-tab" data-target="parkinsons">🤲 Parkinson's</button>
+    <button class="cond-tab" data-target="dementia">🌫️ Dementia</button>
+    <button class="cond-tab" data-target="stroke">⚡ Stroke</button>
+    <button class="cond-tab" data-target="mci">🔍 Mild Cognitive Impairment</button>
+  </div>
+
+  <!-- ALZHEIMER'S -->
+  <div class="condition-section active" id="alzheimers">
+    <h2>Alzheimer's Disease</h2>
+    <p class="condition-intro">Alzheimer's is a progressive brain disorder that slowly destroys memory, thinking, and eventually the ability to carry out simple tasks. It is the most common cause of dementia, accounting for 60–80% of cases.</p>
+
+    <div class="learn-grid">
+      <div class="learn-card">
+        <h4>🔬 What Happens in the Brain?</h4>
+        <p>Abnormal protein clumps called "plaques" and "tangles" build up between and within nerve cells. This disrupts communication between neurons and eventually causes cells to die.</p>
+      </div>
+      <div class="learn-card">
+        <h4>📅 Progression</h4>
+        <p>Alzheimer's progresses through early, middle, and late stages — typically over 8 to 10 years. Early stages involve mild forgetfulness; late stages require full-time care.</p>
+      </div>
+      <div class="learn-card">
+        <h4>🔢 By the Numbers</h4>
+        <p>Over 6.9 million Americans over 65 live with Alzheimer's. The risk doubles every 5 years after age 65. About 1 in 3 seniors dies with Alzheimer's or another dementia.</p>
+      </div>
+      <div class="learn-card">
+        <h4>💊 Treatment Today</h4>
+        <p>There is no cure, but FDA-approved medications like lecanemab can slow progression in early stages. Lifestyle modifications, cognitive training, and social engagement also help.</p>
+      </div>
+      <div class="learn-card">
+        <h4>🛡️ Prevention Tips</h4>
+        <p>Regular aerobic exercise, a Mediterranean diet, quality sleep, mental stimulation, and managing blood pressure and diabetes all reduce Alzheimer's risk.</p>
+      </div>
+      <div class="learn-card">
+        <h4>🧬 Genetics</h4>
+        <p>The APOE-e4 gene increases risk but doesn't guarantee the disease. Only about 1% of cases are caused by rare gene mutations passed down in families (early-onset Alzheimer's).</p>
+      </div>
+    </div>
+
+    <div class="warning-signs">
+      <h4>⚠️ 10 Warning Signs of Alzheimer's</h4>
+      <ul>
+        <li>Memory loss that disrupts daily life (forgetting recently learned information)</li>
+        <li>Challenges in planning or solving problems</li>
+        <li>Difficulty completing familiar tasks at home, work, or leisure</li>
+        <li>Confusion with time or place</li>
+        <li>Trouble understanding visual images and spatial relationships</li>
+        <li>New problems with words in speaking or writing</li>
+        <li>Misplacing things and inability to retrace steps</li>
+        <li>Decreased or poor judgment (e.g., being scammed more easily)</li>
+        <li>Withdrawal from work or social activities</li>
+        <li>Changes in mood and personality</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PARKINSON'S -->
+  <div class="condition-section" id="parkinsons">
+    <h2>Parkinson's Disease</h2>
+    <p class="condition-intro">Parkinson's is a progressive nervous system disorder that primarily affects movement. It develops when neurons in a brain region called the substantia nigra break down or die, reducing the production of dopamine.</p>
+
+    <div class="learn-grid">
+      <div class="learn-card">
+        <h4>🔬 The Dopamine Connection</h4>
+        <p>Dopamine is the brain's "movement messenger." When dopamine-producing cells die, signals between the brain and muscles become slow and imprecise, causing the hallmark tremors and rigidity.</p>
+      </div>
+      <div class="learn-card">
+        <h4>🚶 Motor vs. Non-Motor Symptoms</h4>
+        <p>While tremors, stiffness, and slow movement are well-known, Parkinson's also causes non-motor symptoms: depression, sleep problems, loss of smell, and cognitive changes.</p>
+      </div>
+      <div class="learn-card">
+        <h4>📋 Who Gets It?</h4>
+        <p>About 90,000 new cases are diagnosed in the US each year. It typically begins after age 60, but young-onset Parkinson's (before 50) affects about 10–20% of patients.</p>
+      </div>
+      <div class="learn-card">
+        <h4>💊 Levodopa</h4>
+        <p>The most effective medication is levodopa, which the brain converts to dopamine. Physical therapy, occupational therapy, and deep brain stimulation (DBS) are also important treatments.</p>
+      </div>
+      <div class="learn-card">
+        <h4>🏃 Exercise is Medicine</h4>
+        <p>Research shows that vigorous aerobic exercise — especially boxing, cycling, and tango dancing — can significantly slow Parkinson's progression by promoting neuroplasticity.</p>
+      </div>
+      <div class="learn-card">
+        <h4>🌙 Sleep & Parkinson's</h4>
+        <p>REM sleep behavior disorder — where people act out vivid dreams — is one of the earliest warning signs of Parkinson's, sometimes preceding motor symptoms by 10+ years.</p>
+      </div>
+    </div>
+
+    <div class="warning-signs">
+      <h4>⚠️ Early Warning Signs</h4>
+      <ul>
+        <li>Tremor in a finger, thumb, hand, or chin while at rest</li>
+        <li>Smaller handwriting than usual (micrographia)</li>
+        <li>Loss of smell (hyposmia) — especially for things like bananas or licorice</li>
+        <li>Trouble sleeping — thrashing or acting out dreams</li>
+        <li>Stiffness in arms, legs, or trunk that doesn't go away when moving</li>
+        <li>Constipation with no clear cause</li>
+        <li>Softer, lower, or hoarse voice</li>
+        <li>Masked face — a serious, depressed, or mad look even when not feeling that way</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DEMENTIA -->
+  <div class="condition-section" id="dementia">
+    <h2>Dementia</h2>
+    <p class="condition-intro">Dementia is not a single disease — it's an umbrella term for a group of symptoms affecting memory, thinking, and social abilities severely enough to interfere with daily life. Alzheimer's is the most common type, but there are many others.</p>
+
+    <div class="learn-grid">
+      <div class="learn-card">
+        <h4>🌫️ Types of Dementia</h4>
+        <p>Major types include: Alzheimer's disease (60–80%), Vascular dementia (after strokes), Lewy body dementia, Frontotemporal dementia, and mixed dementia (more than one type at once).</p>
+      </div>
+      <div class="learn-card">
+        <h4>🆚 Normal Aging vs. Dementia</h4>
+        <p>Occasionally forgetting a name but remembering it later is normal aging. Forgetting important events, getting lost in familiar places, and asking the same question repeatedly are warning signs.</p>
+      </div>
+      <div class="learn-card">
+        <h4>🩺 Reversible Causes</h4>
+        <p>Some conditions can mimic dementia and are treatable: thyroid problems, vitamin B12 deficiency, depression, medication side effects, and urinary tract infections in older adults.</p>
+      </div>
+      <div class="learn-card">
+        <h4>🌐 Global Impact</h4>
+        <p>55 million people worldwide live with dementia. A new case is diagnosed every 3 seconds globally. Dementia is one of the leading causes of disability among older adults worldwide.</p>
+      </div>
+      <div class="learn-card">
+        <h4>🧠 The MIND Diet</h4>
+        <p>The MIND diet (Mediterranean-DASH Intervention for Neurodegenerative Delay) combines two proven diets and has been shown to reduce dementia risk by up to 53% in strict followers.</p>
+      </div>
+      <div class="learn-card">
+        <h4>❤️ Vascular Dementia</h4>
+        <p>The second most common type is caused by reduced blood flow to the brain — often from a series of small strokes. Controlling blood pressure and cholesterol is key prevention.</p>
+      </div>
+    </div>
+
+    <div class="warning-signs">
+      <h4>⚠️ Seven Stages of Dementia</h4>
+      <ul>
+        <li><strong>Stage 1:</strong> No impairment — normal function</li>
+        <li><strong>Stage 2:</strong> Very mild decline — normal forgetfulness</li>
+        <li><strong>Stage 3:</strong> Mild decline — family members may notice problems</li>
+        <li><strong>Stage 4:</strong> Moderate decline — difficulty with complex tasks, may withdraw socially</li>
+        <li><strong>Stage 5:</strong> Moderately severe — needs help with daily activities, may forget address or major current events</li>
+        <li><strong>Stage 6:</strong> Severe — needs extensive help, may not recognize spouse or children</li>
+        <li><strong>Stage 7:</strong> Very severe — loss of ability to speak and walk</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STROKE -->
+  <div class="condition-section" id="stroke">
+    <h2>Stroke</h2>
+    <p class="condition-intro">A stroke occurs when blood supply to part of the brain is cut off. Without oxygen, brain cells begin dying within minutes. Stroke is a medical emergency — fast treatment is essential.</p>
+
+    <div class="learn-grid">
+      <div class="learn-card">
+        <h4>🔴 Ischemic vs. Hemorrhagic</h4>
+        <p>87% of strokes are ischemic (a clot blocks a blood vessel). The remaining 13% are hemorrhagic (a blood vessel ruptures). Both are emergencies requiring different treatments.</p>
+      </div>
+      <div class="learn-card">
+        <h4>⚡ The BE-FAST Test</h4>
+        <p><strong>B</strong>alance, <strong>E</strong>yes, <strong>F</strong>ace drooping, <strong>A</strong>rm weakness, <strong>S</strong>peech difficulty, <strong>T</strong>ime to call 911. Learn these — they can save a life.</p>
+      </div>
+      <div class="learn-card">
+        <h4>⏰ Time is Brain</h4>
+        <p>Every minute during a stroke, about 1.9 million neurons die. The clot-busting drug tPA must be given within 4.5 hours of symptom onset — which is why BE-FAST awareness matters.</p>
+      </div>
+      <div class="learn-card">
+        <h4>🔄 TIA — The Warning Stroke</h4>
+        <p>A transient ischemic attack (TIA or "mini-stroke") causes temporary symptoms lasting minutes to hours. It is a major warning sign — 1 in 10 TIA patients has a full stroke within 3 months.</p>
+      </div>
+      <div class="learn-card">
+        <h4>🏋️ Recovery & Rehab</h4>
+        <p>The brain is remarkably adaptable. Physical, speech, and occupational therapy help the brain form new pathways. Most recovery happens in the first 3–6 months after stroke.</p>
+      </div>
+      <div class="learn-card">
+        <h4>🛡️ 80% Preventable</h4>
+        <p>Up to 80% of strokes are preventable. Key steps: control blood pressure, stop smoking, manage diabetes, maintain healthy weight, limit alcohol, and treat atrial fibrillation.</p>
+      </div>
+    </div>
+
+    <div class="warning-signs">
+      <h4>⚠️ Remember BE-FAST</h4>
+      <ul>
+        <li><strong>B — Balance:</strong> Sudden loss of balance or coordination</li>
+        <li><strong>E — Eyes:</strong> Sudden vision changes in one or both eyes</li>
+        <li><strong>F — Face:</strong> Ask person to smile — does one side droop?</li>
+        <li><strong>A — Arms:</strong> Ask person to raise both arms — does one drift down?</li>
+        <li><strong>S — Speech:</strong> Ask person to repeat a simple sentence — is speech slurred or strange?</li>
+        <li><strong>T — Time:</strong> If ANY of these are present, call 911 IMMEDIATELY</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MCI -->
+  <div class="condition-section" id="mci">
+    <h2>Mild Cognitive Impairment (MCI)</h2>
+    <p class="condition-intro">MCI is the stage between normal age-related cognitive changes and the more serious decline of dementia. People with MCI have noticeable changes in memory or thinking, but can still live independently.</p>
+
+    <div class="learn-grid">
+      <div class="learn-card">
+        <h4>🔍 What is MCI?</h4>
+        <p>MCI causes cognitive changes noticeable to the person and others, but not severe enough to interfere significantly with daily life. It affects about 15–20% of people over 65.</p>
+      </div>
+      <div class="learn-card">
+        <h4>🔀 Two Types</h4>
+        <p>Amnestic MCI (the most common type) primarily affects memory. Non-amnestic MCI affects other thinking skills like language, attention, or visual-spatial ability.</p>
+      </div>
+      <div class="learn-card">
+        <h4>📊 What Happens Next?</h4>
+        <p>About 10–15% of people with MCI go on to develop dementia each year. However, some people stay stable, and some even improve — especially when a reversible cause is found.</p>
+      </div>
+      <div class="learn-card">
+        <h4>🔬 Diagnosis</h4>
+        <p>Doctors use cognitive tests, brain imaging (MRI), blood tests, and sometimes cerebrospinal fluid analysis to distinguish MCI from normal aging or early dementia.</p>
+      </div>
+      <div class="learn-card">
+        <h4>💪 What You Can Do</h4>
+        <p>MCI is a crucial intervention window. Regular exercise, cognitive training, social engagement, treating sleep apnea, and managing vascular risk factors all reduce conversion to dementia.</p>
+      </div>
+      <div class="learn-card">
+        <h4>🧪 Emerging Research</h4>
+        <p>New blood tests can detect amyloid beta — the hallmark of Alzheimer's — years before symptoms appear, opening doors for very early intervention during the MCI stage.</p>
+      </div>
+    </div>
+
+    <div class="warning-signs">
+      <h4>⚠️ Signs That May Indicate MCI</h4>
+      <ul>
+        <li>Forgetting things more often than you used to</li>
+        <li>Forgetting important events such as appointments or social engagements</li>
+        <li>Losing your train of thought or the thread of conversations, books, or movies</li>
+        <li>Feeling increasingly overwhelmed by making decisions or planning steps</li>
+        <li>Having trouble finding your way around familiar places</li>
+        <li>Your family or friends notice memory slips or personality changes</li>
+        <li>Feeling more anxious, depressed, or irritable than usual</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><span>🧠</span> NeuroNest <p>A passion project dedicated to brain health education.</p></div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="games.html">Brain Games</a>
+        <a href="journal.html">Journal</a>
+        <a href="caregiver.html">Caregivers</a>
+        <a href="chat.html">Ask NeuroNest</a>
+      </div>
+    </div>
+    <p class="footer-disclaimer">NeuroNest is for educational purposes only. Always consult a medical professional for health advice.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

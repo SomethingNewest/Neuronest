@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brain Games — NeuroNest</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,900;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* WORD SCRAMBLE */
+    .scramble-word {
+      font-family: 'Fraunces', serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--forest);
+      letter-spacing: 0.3em;
+      text-align: center;
+      margin: 30px 0;
+    }
+    .scramble-hint {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    .scramble-input {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 16px;
+      border: 2px solid var(--border);
+      border-radius: 50px;
+      padding: 14px 24px;
+      font-size: 1.1rem;
+      text-align: center;
+      font-family: 'DM Sans', sans-serif;
+      outline: none;
+    }
+    .scramble-input:focus { border-color: var(--sage); }
+    .game-btn {
+      display: inline-block;
+      background: var(--forest);
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      transition: background 0.2s;
+      margin: 4px;
+    }
+    .game-btn:hover { background: var(--sage); }
+    .game-btn.secondary {
+      background: transparent;
+      color: var(--forest);
+      border: 2px solid var(--forest);
+    }
+    .game-btn.secondary:hover { background: var(--forest); color: white; }
+    .game-feedback {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 500;
+      min-height: 30px;
+      margin: 10px 0;
+    }
+    .feedback-correct { color: var(--sage); }
+    .feedback-wrong { color: var(--rose); }
+    /* Number span */
+    .span-number {
+      font-family: 'Fraunces', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--forest);
+      letter-spacing: 0.3em;
+      text-align: center;
+      padding: 30px;
+      background: var(--cream);
+      border-radius: var(--radius);
+      margin: 20px 0;
+    }
+    .game-tabs {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 20px 80px;
+      border-bottom: 1px solid var(--border);
+      background: white;
+    }
+    @media(max-width:900px){.game-tabs{padding:16px 24px;}}
+    .game-tab-btn {
+      padding: 10px 22px;
+      border-radius: 30px;
+      border: 2px solid var(--border);
+      background: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.2s;
+    }
+    .game-tab-btn.active, .game-tab-btn:hover {
+      background: var(--forest);
+      color: white;
+      border-color: var(--forest);
+    }
+    .game-panel { display: none; }
+    .game-panel.active { display: block; }
+    .game-content-area {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .game-content-area h2 {
+      font-size: 2rem;
+      color: var(--forest);
+      margin-bottom: 10px;
+    }
+    .game-content-area p {
+      color: var(--text-mid);
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand"><span class="brand-icon">🧠</span><span class="brand-name">NeuroNest</span></div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="games.html" class="active">Brain Games</a></li>
+      <li><a href="journal.html">My Journal</a></li>
+      <li><a href="caregiver.html">Caregivers</a></li>
+      <li><a href="chat.html">Ask NeuroNest</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+  </nav>
+
+  <div class="page-hero">
+    <h1>🎮 Brain Games Arcade</h1>
+    <p>Science-backed games designed to exercise your memory, attention, pattern recognition, and language centers.</p>
+  </div>
+
+  <!-- GAME SELECTOR TABS -->
+  <div class="game-tabs">
+    <button class="game-tab-btn active" onclick="switchGame('memory')">🃏 Memory Match</button>
+    <button class="game-tab-btn" onclick="switchGame('wordrecall')">📝 Word Recall</button>
+    <button class="game-tab-btn" onclick="switchGame('pattern')">🔴 Pattern Memory</button>
+    <button class="game-tab-btn" onclick="switchGame('scramble')">🔀 Word Scramble</button>
+    <button class="game-tab-btn" onclick="switchGame('span')">🔢 Number Span</button>
+  </div>
+
+  <!-- MEMORY MATCH -->
+  <div class="game-panel active" id="panel-memory">
+    <div class="game-arena">
+      <div class="score-bar">
+        <span>🃏 Memory Match</span>
+        <span>Score: <strong class="score-val" id="memoryScore">0</strong></span>
+        <button class="game-btn secondary" onclick="initMemoryGame()">New Game</button>
+      </div>
+      <p style="text-align:center;color:var(--text-mid);margin-bottom:24px;">Flip cards to find matching pairs. Exercise your short-term visual memory.</p>
+      <div class="memory-grid" id="memoryGrid"></div>
+    </div>
+  </div>
+
+  <!-- WORD RECALL -->
+  <div class="game-panel" id="panel-wordrecall">
+    <div class="game-arena">
+      <div class="score-bar">
+        <span>📝 Word Recall</span>
+        <span>Trains: Episodic Memory</span>
+        <button class="game-btn secondary" onclick="initWordRecall()">New Round</button>
+      </div>
+      <div id="wordRecallArea" style="max-width:600px;margin:0 auto;padding:20px 0;"></div>
+    </div>
+  </div>
+
+  <!-- PATTERN MEMORY -->
+  <div class="game-panel" id="panel-pattern">
+    <div class="game-arena">
+      <div class="score-bar">
+        <span>🔴 Pattern Memory</span>
+        <span>Trains: Attention & Working Memory</span>
+        <button class="game-btn secondary" onclick="initPatternGame()">Reset</button>
+      </div>
+      <div id="patternArea" style="max-width:600px;margin:0 auto;padding:20px 0;text-align:center;"></div>
+    </div>
+  </div>
+
+  <!-- WORD SCRAMBLE -->
+  <div class="game-panel" id="panel-scramble">
+    <div class="game-arena">
+      <div class="score-bar">
+        <span>🔀 Word Scramble</span>
+        <span>Score: <strong class="score-val" id="scrambleScore">0</strong></span>
+        <button class="game-btn secondary" onclick="loadScrambleWord()">Skip</button>
+      </div>
+      <div class="game-content-area">
+        <h2>Unscramble the Word</h2>
+        <p>Unscramble this brain-health related word. Exercises your language and semantic memory centers.</p>
+        <div class="scramble-word" id="scrambleDisplay">------</div>
+        <div class="scramble-hint" id="scrambleHint"></div>
+        <input type="text" class="scramble-input" id="scrambleInput" placeholder="Type your answer..." />
+        <div class="game-feedback" id="scrambleFeedback"></div>
+        <button class="game-btn" onclick="checkScramble()">Submit</button>
+        <button class="game-btn secondary" onclick="revealScramble()">Reveal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NUMBER SPAN -->
+  <div class="game-panel" id="panel-span">
+    <div class="game-arena">
+      <div class="score-bar">
+        <span>🔢 Number Span</span>
+        <span>Score: <strong class="score-val" id="spanScore">0</strong></span>
+        <button class="game-btn secondary" onclick="initSpanGame()">Reset</button>
+      </div>
+      <div class="game-content-area">
+        <h2>Number Span Test</h2>
+        <p>Watch the number sequence, then type it back in order. This directly measures your working memory capacity.</p>
+        <div id="spanArea">
+          <button class="game-btn" onclick="startSpanRound()">Start</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><span>🧠</span> NeuroNest <p>A passion project dedicated to brain health education.</p></div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="journal.html">Journal</a>
+        <a href="caregiver.html">Caregivers</a>
+        <a href="chat.html">Ask NeuroNest</a>
+      </div>
+    </div>
+    <p class="footer-disclaimer">NeuroNest is for educational purposes only. Always consult a medical professional for health advice.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // ---- GAME TAB SWITCHING ----
+    function switchGame(name) {
+      document.querySelectorAll('.game-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.game-tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('panel-' + name).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    // ---- WORD SCRAMBLE GAME ----
+    const scrambleWords = [
+      { word: 'NEURON', hint: 'A nerve cell in the brain' },
+      { word: 'SYNAPSE', hint: 'The gap between two nerve cells' },
+      { word: 'DOPAMINE', hint: 'A key brain chemical for movement and reward' },
+      { word: 'CORTEX', hint: 'The outer layer of the brain' },
+      { word: 'DEMENTIA', hint: 'A group of conditions affecting memory and thinking' },
+      { word: 'HIPPOCAMPUS', hint: 'The brain region responsible for forming new memories' },
+      { word: 'CEREBELLUM', hint: 'Brain region that controls balance and coordination' },
+      { word: 'AMYLOID', hint: 'Protein plaques associated with Alzheimer\'s disease' },
+      { word: 'COGNITION', hint: 'Mental processes like memory, attention, and reasoning' },
+      { word: 'NEUROPLASTICITY', hint: 'The brain\'s ability to reorganize and form new connections' },
+      { word: 'ALZHEIMERS', hint: 'The most common cause of dementia' },
+      { word: 'MELATONIN', hint: 'The hormone that regulates sleep cycles' },
+      { word: 'SEROTONIN', hint: 'A neurotransmitter linked to mood and wellbeing' },
+      { word: 'FRONTAL', hint: 'The brain lobe responsible for decision making and personality' },
+    ];
+    let scrambleCurrent = null;
+    let scrambleScoreVal = 0;
+
+    function scramble(word) {
+      const arr = word.split('');
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      const result = arr.join('');
+      return result === word ? scramble(word) : result;
+    }
+
+    function loadScrambleWord() {
+      scrambleCurrent = scrambleWords[Math.floor(Math.random() * scrambleWords.length)];
+      document.getElementById('scrambleDisplay').textContent = scramble(scrambleCurrent.word);
+      document.getElementById('scrambleHint').textContent = '💡 Hint: ' + scrambleCurrent.hint;
+      document.getElementById('scrambleInput').value = '';
+      document.getElementById('scrambleFeedback').textContent = '';
+      document.getElementById('scrambleInput').focus();
+    }
+
+    function checkScramble() {
+      if (!scrambleCurrent) return;
+      const guess = document.getElementById('scrambleInput').value.trim().toUpperCase();
+      const fb = document.getElementById('scrambleFeedback');
+      if (guess === scrambleCurrent.word) {
+        scrambleScoreVal += 10;
+        document.getElementById('scrambleScore').textContent = scrambleScoreVal;
+        fb.textContent = '✅ Correct! Great work!';
+        fb.className = 'game-feedback feedback-correct';
+        setTimeout(loadScrambleWord, 1200);
+      } else {
+        fb.textContent = '❌ Not quite — try again!';
+        fb.className = 'game-feedback feedback-wrong';
+      }
+    }
+
+    function revealScramble() {
+      if (!scrambleCurrent) return;
+      document.getElementById('scrambleFeedback').textContent = '💡 The answer was: ' + scrambleCurrent.word;
+      document.getElementById('scrambleFeedback').className = 'game-feedback';
+      setTimeout(loadScrambleWord, 2000);
+    }
+
+    document.getElementById('scrambleInput')?.addEventListener('keydown', e => {
+      if (e.key === 'Enter') checkScramble();
+    });
+
+    // ---- NUMBER SPAN GAME ----
+    let spanLevel = 3;
+    let spanSequence = [];
+    let spanPhase = 'idle';
+    let spanScoreVal = 0;
+
+    function initSpanGame() {
+      spanLevel = 3;
+      spanScoreVal = 0;
+      spanSequence = [];
+      spanPhase = 'idle';
+      document.getElementById('spanScore').textContent = '0';
+      document.getElementById('spanArea').innerHTML = `<button class="game-btn" onclick="startSpanRound()">Start</button>`;
+    }
+
+    function startSpanRound() {
+      spanSequence = Array.from({ length: spanLevel }, () => Math.floor(Math.random() * 10));
+      spanPhase = 'showing';
+      document.getElementById('spanArea').innerHTML = `<div class="span-number" id="spanDisplay">Get Ready...</div>`;
+      let i = 0;
+      setTimeout(() => {
+        const interval = setInterval(() => {
+          if (i < spanSequence.length) {
+            document.getElementById('spanDisplay').textContent = spanSequence[i];
+            i++;
+          } else {
+            clearInterval(interval);
+            document.getElementById('spanDisplay').textContent = '?';
+            showSpanInput();
+          }
+        }, 900);
+      }, 800);
+    }
+
+    function showSpanInput() {
+      spanPhase = 'input';
+      document.getElementById('spanArea').innerHTML = `
+        <p style="color:var(--text-mid);margin-bottom:16px;">Type the numbers in order (no spaces):</p>
+        <input type="text" id="spanInput" class="scramble-input" inputmode="numeric" placeholder="e.g. 4 7 2..." style="font-size:1.3rem;" />
+        <br><button class="game-btn" onclick="checkSpan()" style="margin-top:16px;">Submit</button>
+      `;
+      document.getElementById('spanInput').focus();
+      document.getElementById('spanInput').addEventListener('keydown', e => {
+        if (e.key === 'Enter') checkSpan();
+      });
+    }
+
+    function checkSpan() {
+      const raw = document.getElementById('spanInput').value.replace(/\s+/g, '');
+      const correct = spanSequence.join('');
+      if (raw === correct) {
+        spanScoreVal += spanLevel * 5;
+        document.getElementById('spanScore').textContent = spanScoreVal;
+        spanLevel++;
+        document.getElementById('spanArea').innerHTML = `<div style="font-size:1.2rem;color:var(--sage);font-weight:600;margin-bottom:20px;">✅ Correct! Level up to ${spanLevel} digits!</div><button class="game-btn" onclick="startSpanRound()">Next Round</button>`;
+      } else {
+        document.getElementById('spanArea').innerHTML = `<div style="font-size:1.1rem;color:var(--rose);font-weight:600;margin-bottom:8px;">❌ Wrong — the sequence was: ${spanSequence.join(' ')}</div><div style="margin-bottom:20px;color:var(--text-mid);">Final Score: ${spanScoreVal}</div><button class="game-btn" onclick="initSpanGame()">Play Again</button>`;
+        saveGameScore('Number Span', spanScoreVal);
+      }
+    }
+
+    // Init all on load
+    document.addEventListener('DOMContentLoaded', () => {
+      loadScrambleWord();
+    });
+  </script>
+</body>
+</html>
